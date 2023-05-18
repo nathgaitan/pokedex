@@ -31,9 +31,18 @@
 	--color-primary-hover: #83c5be;
 }
 
+body{
+    background-image: url(/img/fondogris.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .container{
-    max-width: 1200px;
+    
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   
 
 
@@ -90,6 +99,16 @@ header .busqueda{
 
 .container-filter{
     display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 25px;
+    max-width: 1200px;
+   
+  
+    
+    
+    
+   
 }
 .icon-filter{
    display: flex;
@@ -107,15 +126,26 @@ header .busqueda{
 
 /*cards*/
 .card-list-pokemon{
-    display: grid;
-    grid-template-columns:repeat(4,1fr) ;
-    gap: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    
+   
 }
 .card-pokemon{
     cursor: pointer;
     text-decoration: none;
+    margin: 20px;
+    border: solid rgba(80, 80, 80, 0.279) 2px;
+    border-radius: 5px;
+   box-shadow: 11px 10px 9px 3px rgb(91, 91, 91);
+   
+}
+.card-pokemon:hover{
+    transform: scale(1.1);
 }
 .card-img{
     background-color: #f2f2f2;
@@ -130,8 +160,13 @@ header .busqueda{
     height: 100%;
 }
 .card-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 15px;
     color: #333;
+    background-image: url(/img/fondo-card.jpeg);
 }
 .pokemon.id{
     display: block;
@@ -227,11 +262,11 @@ header .busqueda{
     top: 0;
     left: -300px;
     width: 250px;
-
+    overflow: scroll;
     color: #555;
     background-color: #f2f2f2;
     height: 100%;
-    padding-top: 140px;
+    padding-top: 40px;
     transition: all .3s linear;
 
 }
@@ -360,4 +395,18 @@ Styles of Pokemon Single Page
     height: 30px;
     background-color: var(--color-primary);
     border-radius: 10px;
+}
+
+
+
+
+@media (min-width: 430px){
+    
+    .card-list-pokemon{
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .container{
+        flex-direction: row;
+    }
 }
